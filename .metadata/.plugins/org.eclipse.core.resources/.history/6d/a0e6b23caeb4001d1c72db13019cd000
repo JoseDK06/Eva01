@@ -1,0 +1,16 @@
+package dao;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+
+public class OnpeDAO {
+	db.Db db = new db.Db("Onpe");
+
+	public Object getVotos(int inicio, int fin) {
+		db.Sentencia( String.format("usp_getVotos %s,%s", inicio,fin) );
+		return db.getRegistros();
+	}
+}
