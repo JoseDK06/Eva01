@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
 <% 
 	String id = (String) session.getAttribute("id");
 	String[][] data = (String[][]) session.getAttribute("data");
@@ -6,6 +7,7 @@
 
 
 <!DOCTYPE html> 
+<html>
     <head>
         <title>ONPE - Oficina Nacional de Procesos Electorales</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"  /> 
@@ -29,10 +31,10 @@
 								<a href="presidenciales.jsp">PRESIDENCIAL</a>
 							</li>
 							<li class="bt-amarillo">
-								<a href="actas.jsp">ACTAS</a>
+								<a href="svlActas">ACTAS</a>
 							</li>
 							<li class="bt-rojo act-rojo">
-								<a href="svlParticipacion">PARTICIPACI”N CIUDADANA</a>
+								<a href="svlParticipacion">PARTICIPACI√ìN CIUDADANA</a>
 							</li>
 						</ul>
 					</nav>
@@ -40,7 +42,7 @@
 
 				<section class="contenedor">
 					<div class="row">
-						<div class="col-xs-12 col-md-3">
+						<div class="col-xs-12 col-md-3 mg20top">
 							<div class="menu-interna">
 								<ul>
 									<li><a href="svlParticipacion" class="act-izq">TOTAL</a></li>
@@ -48,11 +50,11 @@
 							</div>
 						</div>
 						
-						<div class="col-xs-12 col-md-9" id="impreso">
+						<div class="col-xs-12 col-md-9 mg20top" id="impreso">
 							<div class="contenido-interna">
 								<div class="titulos col-xs-12">
 									<div class="col-xs-11">
-										<h3> <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" style="font-size:19px"></span> SEGUNDA ELECCI”N PRESIDENCIAL 2016: PARTICIPACI”N CIUDADANA</h3>
+										<h3> <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" style="font-size:19px"></span> SEGUNDA ELECCI√ìN PRESIDENCIAL 2016: PARTICIPACI√ìN CIUDADANA</h3>
 									</div>
 									<div class="col-xs-1 oculto-boton-print">
 										<button><i class="fa fa-print ico-print"></i></button>
@@ -69,16 +71,34 @@
 				                    </table>
 								<% }  %>
 								
-								<div class="col-xs-12">
+								<div class="col-xs-12 ">
 									<p class="subtitle">ACTAS CONTABILIZADAS</p>
-									<div class="col-lg-7 centered">
+									<div class="col-lg-8 centered">
 										<div class="col-xs-12 col-md-12 col-lg-12 cont-curv">
 											<div class="col-xs-3 col-md-1">
 												<span class="glyphicon glyphicon-ok-circle ico-info" aria-hidden="true"></span>
 											</div>
-											<div class="col-xs-9 col-md-11">
+											<div class="col-xs-9 col-md-11 mg20top" >
 												<ul>
-													<li>ACTUALIZADO EL 20/06/2016 A LAS 19:16 h </li>
+													<li>ACTUALIZADO EL  
+                                            			<script languaje="JavaScript">
+			                                                var mydate=new Date()
+			                                                var year=mydate.getYear()
+			                                                if (year < 1000)
+			                                                year+=1900
+			                                                var day=mydate.getDay()
+			                                                var month=mydate.getMonth()
+			                                                var daym = mydate.getDate()
+			                                                var hora = mydate.getHours()
+			                                                var minutos = mydate.getMinutes()
+			                                                if (daym<10)
+			                                                daym="0"+daym
+			                                                var montharray=new
+			
+			                                                Array("ENERO","FEBREO","MARZO","ABRILl","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE")
+			                                                document.write(daym+ " DE "+montharray[month]+" "+year+ " A LAS "+hora+":"+minutos+" h")
+                                           			 </script>
+                                        			</li>
 												</ul>
 											</div>
 										</div>
@@ -91,11 +111,18 @@
 										<img src="images/estadistico.png" class="img-responsive">
 									</div>
 									<div class="col-xs-12 col-md-6">
-										<p class="subtitle">ELECTORES H¡BILES 22,901,954</p>
+									
+										<% if(id != null) { %>
+											<div class="cont-recto" style="margin-bottom:10px">
+													<%= session.getAttribute("ambito") %>														
+											 </div>
+										 <% } %>
+										 
+										<p class="subtitle">ELECTORES H√ÅBILES 22,901,954</p>
 										<div id="page-wrap">
 											<table class="table09_2" cellspacing="0">
 												<tr>
-													<th>PARTICIPACI”N</th>
+													<th>PARTICIPACI√ìN</th>
 													<th>AUSENTISMO</th>
 												</tr>
 												<tr>
@@ -114,17 +141,17 @@
 								<% if ( id == null ) { %>
 									<div class="col-xs-12 pbot30 ptop20">
 										<div class="col-xs-12 col-md-6">
-											<a href="svlParticipacion?id=extranjero"><img src="images/icono_extranjero.jpg" class="img-responsive"></a>
+											<a href="svlParticipacion?id=Extranjero"><img src="images/icono_extranjero.jpg" class="img-responsive"></a>
 										</div>
 										<div class="col-xs-12 col-md-6">
-											<a href="svlParticipacion?id=nacional"><img src="images/icono_nacional.jpg" class="img-responsive"></a>
+											<a href="svlParticipacion?id=Nacional"><img src="images/icono_nacional.jpg" class="img-responsive"></a>
 										</div>
 									</div>
 								<% } %>
 
-								<% if ( id != null ) { %>
-									<div class="col-xs-12">
-										<p class="subtitle">Consulta de participaciÛn DETALLADO </p>
+								<% if ( id != null && data != null) { %>
+									<div class="col-xs-12 mg20top">
+										<p class="subtitle">Consulta de participaci√≥n DETALLADO </p>
 										<div id="page-wrap">
 											<table class="table21">
 												<tbody>
@@ -134,17 +161,17 @@
 				                                        <td>% TOTAL ASISTENTES</td>
 				                                        <td>TOTAL AUSENTES</td>
 				                                        <td>% TOTAL AUSENTES</td>
-				                                        <td>ELECTORES H¡BILES</td>
+				                                        <td>ELECTORES H√ÅBILES</td>
 				                                    </tr>
 				                                
 				                                	<% for ( String[] aData : data ) { %>    
-					                                    <tr>
+					                                    <tr onclick="location.href='svlParticipacion?id=<%=(id + "," + aData[0] )%>'" onmouseover="this.style.cursor = &quot;pointer&quot;; this.style.color = &quot;grey&quot;" onmouseout="this.style.color = &quot;black&quot;" style="cursor: pointer; color: black;">
+					                                        <td><%= aData[0] %></td>
 					                                        <td><%= aData[1] %></td>
 					                                        <td><%= aData[2] %></td>
 					                                        <td><%= aData[3] %></td>
 					                                        <td><%= aData[4] %></td>
 					                                        <td><%= aData[5] %></td>
-					                                        <td><%= aData[6] %></td>
 					                                    </tr>
 				                                    <% } %>
 				                                    <tr>
@@ -157,6 +184,7 @@
 				                                    </tr>
 												</tbody>
 											</table>
+											<br></br>
 										</div>
 									</div>
 								<% } %>

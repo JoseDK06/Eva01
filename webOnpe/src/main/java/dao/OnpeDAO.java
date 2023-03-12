@@ -4,7 +4,7 @@ package dao;
 
 
 public class OnpeDAO {
-db.Db db = new db.Db("sql5108.site4now.net", "db_a952ba_onpe_admin", "onpe1234", "db_a952ba_onpe");
+db.Db db = new db.Db("sql5108.site4now.net", "db_a952ba_onpe","db_a952ba_onpe_admin", "onpe1234");
 	
 	
 	public Object getVotos(int inicio, int fin) {
@@ -22,8 +22,8 @@ db.Db db = new db.Db("sql5108.site4now.net", "db_a952ba_onpe_admin", "onpe1234",
 		return db.getRegistros();
 	}
 	
-	public Object getGrupoVotacion(String id) {
-		db.Sentencia( String.format( "usp_getGrupoVotacion '%s'", id ) );
+	public Object getGrupoVotacion(String nroMesa) {
+		db.Sentencia( String.format( "usp_getGrupoVotacion '%s'", nroMesa ) );
 		return db.getRegistro();
 	}
 }

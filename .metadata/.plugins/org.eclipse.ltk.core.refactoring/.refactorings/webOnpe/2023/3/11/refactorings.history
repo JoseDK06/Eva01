@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move &apos;Actas.jsp&apos; to &apos;webapp&apos;" description="Move &apos;Actas.jsp&apos; to &apos;webapp&apos;" destination="src/main/webapp" element1="src/main/webapp/WEB-INF/Actas.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1678633333002" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;webOnpe/src/main/webapp/Actas.jsp&apos; to &apos;actas.jsp&apos;" description="Rename resource &apos;Actas.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/Actas.jsp" name="actas.jsp" stamp="1678633466911" updateReferences="true"/>
+</session>

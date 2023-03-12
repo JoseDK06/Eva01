@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
  <!DOCTYPE html> 
 <html>
     <head>
@@ -20,7 +21,7 @@
                 </a>
             </div>
             <div class="pull-left pd02 oculto2 ancho-ie">
-                <a href="actas.jsp">
+                <a href="svlActas">
                     <div class="grow pic btn04"><img src="images/actas.jpg" ></div>
                 <div class="tit02"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span><p>ACTAS</p></div>
                 </a>
@@ -28,11 +29,12 @@
             <div class="pull-left pd01 ancho-ie">
                 <a href="svlParticipacion">
                     <div class="grow pic btn05"><img src="images/participacion.jpg" ></div>
-                <div class="tit01"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span><p>PARTICIPACIÓN <br> CIUDADANA</p></div>
+                <div class="tit01"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span><p>PARTICIPACIÃ“N <br> CIUDADANA</p></div>
                 </a>
             </div>
         </section>
         
         
         <%@include file="WEB-INF/footer.jsp" %>
-    </body>
+	</body>
+</html>

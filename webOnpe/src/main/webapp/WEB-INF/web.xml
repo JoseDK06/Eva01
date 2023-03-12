@@ -13,10 +13,20 @@
   <display-name>webOnpe</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>svlActas</display-name>
+    <servlet-name>svlActas</servlet-name>
+    <servlet-class>svl.svlActas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>svlActas</servlet-name>
+    <url-pattern>/svlActas</url-pattern>
+  </servlet-mapping>
 </web-app>
